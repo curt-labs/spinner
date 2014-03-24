@@ -4,16 +4,6 @@ $(function(){
 	var video = document.getElementsByTagName('video')[0];
 	var startX = 0;
 
-	video.addEventListener('timeupdate',function(){
-		var time = Math.floor((100 / video.duration) * video.currentTime);
-		var timeLeft = Math.floor(((video.duration / time) * 100));
-
-		$('.playback-position').text(cleanTime + '%');
-	}, false);
-	video.addEventListener('playing',function(){
-		$('.playback-position').text(video.currentTime);
-	}, false);
-
 	$(document).on('touchstart mousedown','.video-loop',function(e){
 		startX = e.clientX;
 	});
